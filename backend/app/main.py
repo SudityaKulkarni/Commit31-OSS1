@@ -8,6 +8,8 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+from .routers import tasks
+app.include_router(tasks.router)
 
 @app.get("/")
 def home():
